@@ -6,8 +6,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "config.h" //config.h must always be placed before any Fl header
-#include <FL/gl.h>
+//#include "config.h" //config.h must always be placed before any Fl header
+//#include <FL/gl.h>
 #include <FL/Fl_Window.H>
 #include <FL/Fl_Button.H>
 

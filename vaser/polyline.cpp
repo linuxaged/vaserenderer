@@ -1,3 +1,5 @@
+#include "polyline.h"
+
 namespace VASErin
 {	//VASEr internal namespace
 
@@ -1770,17 +1772,6 @@ public:
 	}
 };
 #endif //VASE_RENDERER_EXPER
-
-struct polyline_inopt
-{
-	bool const_color;
-	bool const_weight;
-	bool no_cap_first;
-	bool no_cap_last;
-	bool join_first;
-	bool join_last;
-	double* segment_length; //array of length of each segment
-};
 
 void poly_point_inter( const Point* P, const Color* C, const double* W, const polyline_inopt* inopt,
 		Point& p, Color& c, double& w,

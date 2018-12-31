@@ -12,6 +12,7 @@
 #include <math.h>
 #include <vector>
 #include <stdlib.h>
+#include "gl_driver.h"
 
 namespace VASEr
 {
@@ -24,16 +25,11 @@ const double default_weight = 1.0;
 #include "color.h"
 class vertex_array_holder;
 #include "backend.h"
-#include <windows.h>
-#include <GL/GL.h>
 #include "vertex_array_holder.h"
 #include "agg_curve4.cpp"
 }
 
-#include <windows.h>
-#include <GL/GL.h>
 #include "opengl.cpp"
-#include "polyline.cpp"
 #include "gradient.cpp"
 #include "curve.cpp"
 

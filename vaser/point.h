@@ -1,3 +1,10 @@
+#pragma once
+
+#include <cmath>
+
+struct Vec2 { double x, y; };
+struct Color { float r, g, b, a; };
+
 class Point : public Vec2
 {
 public:
@@ -96,7 +103,7 @@ public:
 	double normalize()
 	{
 		double L = length();
-		if ( L > vaser_min_alw)
+		if ( L > 0.00000000001)
 		{
 			x /= L; y /= L;
 		}
@@ -119,7 +126,7 @@ public:
 	//judgements
 	static inline bool negligible( double M)
 	{
-		return -vaser_min_alw < M && M < vaser_min_alw;
+		return -0.00000000001 < M && M < 0.00000000001;
 	}
 	bool negligible() const
 	{

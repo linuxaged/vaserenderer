@@ -1,3 +1,5 @@
+#include "polyline.h"
+
 namespace VASErin
 {	//VASEr internal namespace
 

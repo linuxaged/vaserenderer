@@ -304,7 +304,7 @@ void recursive_bezier(   double x1, double y1,
 		add_point, obj); 
 }
 
-int curve4_div(double x1, double y1, 
+void curve4_div(double x1, double y1, 
 		double x2, double y2, 
 		double x3, double y3,
 		double x4, double y4,

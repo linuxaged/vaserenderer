@@ -7,18 +7,19 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#include "../vaser/gl_driver.h"
 //#include "config.h" //config.h must always be placed before any Fl header
-#include <FL/gl.h>
+//#include <FL/gl.h>
 #include <FL/Fl_Box.H>
 #include <FL/Fl_Tabs.H>
 #include <FL/Fl_Window.H>
 #include <FL/Fl_Value_Slider.H>
 #include <FL/Fl_Radio_Light_Button.H>
 
-#define VASER_DEBUG
+//#define VASER_DEBUG
 #include "../vaser/vaser.cpp"
 #pragma GCC diagnostic ignored "-Wdeprecated-declarations"
-#include "png_readwrite.cpp"
+//#include "png_readwrite.cpp"
 
 using namespace VASEr;
 void test_draw();
@@ -188,12 +189,12 @@ void drag_cb(Fl_Widget* W, void*)
 }
 void exportimg_cb(Fl_Widget* W, void*)
 {
-	Image img = renderer::get_image();
-	if( img.buf)
-	{
-		save_png("capture.png",img.buf,img.width,img.height,4);
-		free(img.buf);
-	}
+	//Image img = renderer::get_image();
+	//if( img.buf)
+	//{
+	//	save_png("capture.png",img.buf,img.width,img.height,4);
+	//	free(img.buf);
+	//}
 }
 
 void make_form()
@@ -365,14 +366,14 @@ void test_draw()
 		if ( skeleton->value())
 		{
 			polybezier( AP, cc, 1.0, size_of_AP, 0);
-			polyline( AP, black, 1.0, size_of_AP, 0); //control lines
+			polyline( AP, black, 1.0, size_of_AP, nullptr); //control lines
 		}
 	}
 	else
 	{
 		polyline( AP, AC, AW, size_of_AP, &opt);
 		if ( skeleton->value())
-			polyline( AP, cc, 1.0, size_of_AP, 0);
+			polyline( AP, cc, 1.0, size_of_AP, nullptr);
 	}
 
 	renderer::after();
@@ -380,6 +381,10 @@ void test_draw()
 
 int main(int argc, char **argv)
 {
+	GLdriver driver;
+	GLdriverLoad(&driver, "opengl32.dll", "glu32.dll");
+	GLdriverInit(&driver);
+
 	main_wnd = new Fl_Window( 600,300,"VASEr - polyline and bezier example");
 		make_form(); //initialize
 		gl_wnd = new Gl_Window( 0,0,400,300);  gl_wnd->end(); //create gl window

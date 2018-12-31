@@ -1,5 +1,6 @@
 #ifndef VASER_VERTEX_ARRAY_HOLDER_H
 #define VASER_VERTEX_ARRAY_HOLDER_H
+#include "polyline.h"
 
 class vertex_array_holder
 {
@@ -230,7 +231,7 @@ public:
 				P[1] = get(i); i++;
 				P[2] = get(i);
 				P[3] = P[0];
-				polyline((Vec2*)P,col,1.0,4,0);
+				polyline((const Vec2*)P,col,1.0,4, nullptr);
 			}
 		}
 		else if ( glmode == GL_TRIANGLE_STRIP)
@@ -241,7 +242,7 @@ public:
 				P[0] = get(i-2);
 				P[1] = get(i);
 				P[2] = get(i-1);
-				polyline((Vec2*)P,col,1.0,3,0);
+				polyline(dynamic_cast<const Vec2*>(P), col, 1.0, 3, nullptr);
 			}
 		}
 	}
