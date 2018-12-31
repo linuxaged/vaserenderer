@@ -1,4 +1,3 @@
-#include "config.h"
 #include <FL/Fl.H>
 #include <FL/gl.h>
 #include <FL/Fl_Window.H>

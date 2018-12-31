@@ -7,7 +7,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "config.h" //config.h must always be placed before any Fl header
+//#include "config.h" //config.h must always be placed before any Fl header
 #include <FL/gl.h>
 #include <FL/Fl_Box.H>
 #include <FL/Fl_Tabs.H>
@@ -15,11 +15,6 @@
 #include <FL/Fl_Value_Slider.H>
 #include <FL/Fl_Radio_Light_Button.H>
 
-namespace VASEr
-{
-	struct Vec2 { double x,y;};
-	struct Color { float r,g,b,a;};
-}
 #define VASER_DEBUG
 #include "../vaser/vaser.cpp"
 #pragma GCC diagnostic ignored "-Wdeprecated-declarations"

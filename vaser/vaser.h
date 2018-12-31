@@ -15,6 +15,9 @@ namespace VASEr
 {
 const double vaser_pi=3.141592653589793;
 
+struct Vec2 { double x, y; };
+struct Color { float r, g, b, a; };
+
 struct gradient_stop
 {
 	double t; //position
